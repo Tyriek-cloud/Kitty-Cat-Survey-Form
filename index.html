@@ -23,31 +23,31 @@
                 <input id="name" type="text" placeholder="Write Your Name Here" required>
 
                 <label id="email-label" for="email">
-                    <p>Email</p>
+                    <p>Email:</p>
                 </label>
                 <input id="email" type="email" placeholder="Write Your Email Here" required>
 
                 <label id="number-label" for="age">
                     <p>Age (Optional)</p>
                 </label>
-                <input id="number" type="number" placeholder="Write Your Age Here (Optional)" min="10" max="100" required>
+                <input id="age" type="number" placeholder="Write Your Age Here (Optional)" min="10" max="100" required>
 
                 <p>Do you like cats (you better)?</p>
-                <select id="dropdown">
+                <select id="like-cats">
                     <option value="default">No answer selected.</option>
                     <option value="No. Leave.">No. Leave.</option>
                     <option value="Yes. Good answer.">Yes. Good answer.</option>
                 </select>
 
                 <p>Do you own any cats?</p>
-                <select id="dropdown">
+                <select id="own-cats">
                     <option value="default">No answer selected.</option>
                     <option value="No.">No.</option>
                     <option value="Yes. Good answer.">Yes.</option>
                 </select>
 
                 <p>What is your favorite thing to do with a cat?</p>
-                <select id="dropdown">
+                <select id="favorite-activity">
                     <option value="default">Nothing.</option>
                     <option value="Pet them.">Pet them.</option>
                     <option value="Give them their favorite toy.">Give them their favorite toy.</option>
@@ -59,48 +59,28 @@
                 </select>
 
                 <p>Which of these popular cat breeds is your favorite?</p>
-                <input type="radio" name="cat-breed" value="1">Maine Coon</input>
-                <br>
-                <input type="radio" name="cat-breed" value="2">Persian cat</input>
-                <br>
-                <input type="radio" name="cat-breed" value="3">British Shorthair</input>
-                <br>
-                <input type="radio" name="cat-breed" value="4">American Shorthair</input>
-                <br>
-                <input type="radio" name="cat-breed" value="5">Ragdoll</input>
-                <br>
-                <input type="radio" name="cat-breed" value="6">Siamese cat</input>
-                <br>
-                <input type="radio" name="breed" value="7">Abyssian cat</input>
-                <br>
-                <input type="radio" name="breed" value="8">Scottish Fold</input>
-                <br>
-                <input type="radio" name="breed" value="9">Exotic Shorthair</input>
-                <br>
-                <input type="radio" name="breed" value="10">Sphynx cat</input>
-                <br>
+                <input type="radio" name="cat-breed" value="1" id="maine-coon"><label for="maine-coon">Maine Coon</label><br>
+                <input type="radio" name="cat-breed" value="2" id="persian-cat"><label for="persian-cat">Persian cat</label><br>
+                <input type="radio" name="cat-breed" value="3" id="british-shorthair"><label for="british-shorthair">British Shorthair</label><br>
+                <input type="radio" name="cat-breed" value="4" id="american-shorthair"><label for="american-shorthair">American Shorthair</label><br>
+                <input type="radio" name="cat-breed" value="5" id="ragdoll"><label for="ragdoll">Ragdoll</label><br>
+                <input type="radio" name="cat-breed" value="6" id="siamese-cat"><label for="siamese-cat">Siamese cat</label><br>
+                <input type="radio" name="cat-breed" value="7" id="abyssian-cat"><label for="abyssian-cat">Abyssian cat</label><br>
+                <input type="radio" name="cat-breed" value="8" id="scottish-fold"><label for="scottish-fold">Scottish Fold</label><br>
+                <input type="radio" name="cat-breed" value="9" id="exotic-shorthair"><label for="exotic-shorthair">Exotic Shorthair</label><br>
+                <input type="radio" name="cat-breed" value="10" id="sphynx-cat"><label for="sphynx-cat">Sphynx cat</label><br>
 
                 <p>Which of these dog breeds do you dislike (check all that apply)?</p>
-                <input type="checkbox" name="dog" value="1">Labrador Retriever</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="2">Golden Retriever</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="3">Bulldog</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="4">German Shepherd</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="5">Poodle</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="6">Beagle</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="7">French Bulldog</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="8">Yorkshire Terrier</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="9">Rottweiler</input>
-                <br>
-                <input type="checkbox" name="dog-breed" value="10">Chihuahua</input>
-                <br>
+                <input type="checkbox" name="dog-breed" value="1" id="labrador"><label for="labrador">Labrador Retriever</label><br>
+                <input type="checkbox" name="dog-breed" value="2" id="golden-retriever"><label for="golden-retriever">Golden Retriever</label><br>
+                <input type="checkbox" name="dog-breed" value="3" id="bulldog"><label for="bulldog">Bulldog</label><br>
+                <input type="checkbox" name="dog-breed" value="4" id="german-shepherd"><label for="german-shepherd">German Shepherd</label><br>
+                <input type="checkbox" name="dog-breed" value="5" id="poodle"><label for="poodle">Poodle</label><br>
+                <input type="checkbox" name="dog-breed" value="6" id="beagle"><label for="beagle">Beagle</label><br>
+                <input type="checkbox" name="dog-breed" value="7" id="french-bulldog"><label for="french-bulldog">French Bulldog</label><br>
+                <input type="checkbox" name="dog-breed" value="8" id="yorkshire-terrier"><label for="yorkshire-terrier">Yorkshire Terrier</label><br>
+                <input type="checkbox" name="dog-breed" value="9" id="rottweiler"><label for="rottweiler">Rottweiler</label><br>
+                <input type="checkbox" name="dog-breed" value="10" id="chihuahua"><label for="chihuahua">Chihuahua</label><br>
 
                 <p id="Comments/Suggestions">Thank you for taking this survey! Any comments or suggestions for how I can improve the survey?</p>
                 <textarea placeholder="Comments/Suggestions" name="suggestion_text" rows="10" cols="60" required></textarea>

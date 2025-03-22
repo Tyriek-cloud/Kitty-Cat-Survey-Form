@@ -5,8 +5,8 @@ import pandas as pd
 
 app = Flask(__name__)
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "your-supabase-url")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "your-supabase-api-key")
+SUPABASE_URL = os.getenv("SUPABASE_URL", "DATABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "API_KEY")
 
 # Create the Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)

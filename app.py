@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request, jsonify
+from supabase import create_client, Client
+import os
 import pandas as pd
-import json
 
 app = Flask(__name__)
 
-# In-memory list to store form responses (may replace this with a database in the future)
-responses = []
+SUPABASE_URL = os.getenv("SUPABASE_URL", "your-supabase-url")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "your-supabase-api-key")
+
+# Create the Supabase client
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @app.route('/')
 def home():
@@ -13,7 +17,7 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    # Get data from the form
+    # Retrieves data from the form
     name = request.form.get('name')
     email = request.form.get('email')
     age = request.form.get('age')
@@ -24,8 +28,8 @@ def submit():
     disliked_dogs = request.form.getlist('dog-breed')
     comments = request.form.get('suggestion_text')
 
-    # Store the response
-    response = {
+    # Stores responses in the Supabase database
+    data = {
         'name': name,
         'email': email,
         'age': age,
@@ -36,18 +40,30 @@ def submit():
         'disliked_dogs': disliked_dogs,
         'comments': comments
     }
-    
-    responses.append(response)  # Add the response to the list
+
+    # Insert the data into the 'responses' table in Supabase
+    response = supabase.table('responses').insert(data).execute()
+
+    # Check for any issues with inserting the data
+    if response.status_code != 201:
+        return jsonify({"status": "error", "message": response.data}), 400
 
     return jsonify({"status": "success"})  # Respond to the frontend after submission
 
 @app.route('/average_responses')
 def average_responses():
-    # Convert the responses list to a DataFrame for easier analysis
-    df = pd.DataFrame(responses)
+    # Fetch all responses from the Supabase database
+    responses = supabase.table('responses').select('*').execute()
+
+    if responses.status_code != 200:
+        return jsonify({"status": "error", "message": "Failed to fetch data from the database"}), 400
+
+    # Convert responses to a pandas DataFrame for easier analysis
+    df = pd.DataFrame(responses.data)
     
     # Calculate average age (considering age may be optional)
-    average_age = df['age'].apply(pd.to_numeric, errors='coerce').mean()
+    df['age'] = pd.to_numeric(df['age'], errors='coerce')
+    average_age = df['age'].mean()
     
     # Calculate the number of people who like cats
     like_cats_count = df[df['likes_cats'] == 'Yes. Good answer.'].shape[0]

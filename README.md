@@ -1,4 +1,4 @@
-# Kitty Cat Survey Form
+# Kitty-Cat Survey Form
 <img width="383" alt="image" src="https://github.com/user-attachments/assets/e36898e6-3e0f-435e-baec-65580a373f38" />
 
 This is a full-stack web application designed to collect user responses to a survey. The survey was designed to gather sentiments and opinions about domestic cats. The survey currently has the following features:

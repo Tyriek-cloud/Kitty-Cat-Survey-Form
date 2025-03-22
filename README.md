@@ -12,7 +12,7 @@ This is a full-stack web application designed to collect user responses to a sur
 # Technologies Used to Build this Application
 There were a series of different technologies that were used to build this web application:
 
-# *Programming & Scripting Languages*
+*Programming & Scripting Languages*
 This application used the following languages in its creation:
 
 1. Python
@@ -20,7 +20,7 @@ This application used the following languages in its creation:
 3. HTML
 4. CSS
 
-# * Libraries*
+*Libraries*
 There were a series of libraries that were initiated in the "requirements.txt." file in the repository. The libraries include the following:
 
 1. Flask version 3.1.0
@@ -28,7 +28,7 @@ There were a series of libraries that were initiated in the "requirements.txt." 
 3. Flask_sqlalchemy version 3.1.1
 4. Pandas version 2.2.3
 
-# * Hosting Services*
+*Hosting Services*
 This application was built using the following free services:
 
 1. Vercel: For website hosting.

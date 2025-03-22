@@ -1,0 +1,2 @@
+# Hopefully this will allow me to always have the latest version of Flask
+flask>=3.1.0

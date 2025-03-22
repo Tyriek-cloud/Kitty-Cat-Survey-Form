@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-# In-memory list to store form responses (you can replace this with a database)
+# In-memory list to store form responses (may replace this with a database in the future)
 responses = []
 
 @app.route('/')

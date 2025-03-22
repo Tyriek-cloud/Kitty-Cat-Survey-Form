@@ -1,25 +1,35 @@
-h1 {
-    font-size: 270%;
-}
-
-#survey-form {
-    width: 900px;
-    margin: 0 auto;
-}
-
-#description {
-    font-size: 155%;
-}
-
 body {
     text-align: center;
-    font-family: Arial;
-    font-size: 130%;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Default font size, will adjust for responsiveness */
     background-image: url("https://images.unsplash.com/photo-1549291748-630fcc1611bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1534&q=80");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title styling */
+h1 {
+    font-size: 270%;
+}
+
+/* Survey form styling */
+#survey-form {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Description styling */
+#description {
+    font-size: 155%;
+    margin-bottom: 20px;
 }
 
 /* Styling for the status message (success/error feedback) */
@@ -48,4 +58,81 @@ body {
     background-color: #f8d7da; /* Light red background */
     color: #721c24; /* Dark red text */
     border: 2px solid #f5c6cb; /* Light red border */
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    #survey-form {
+        width: 95%; /* Make the form width 95% of the screen width on mobile */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller title size for mobile */
+    }
+
+    #description {
+        font-size: 1.2rem; /* Adjust description font size for smaller screens */
+    }
+
+    /* Ensure all form fields are full width on smaller screens */
+    input[type="text"], input[type="email"], input[type="number"], select, textarea {
+        width: 100%; /* 100% width for form fields */
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Adjust the submit button */
+    #submit {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+    }
+
+    #status-message {
+        width: 90%; /* Adjust status message width on mobile */
+    }
+}
+
+/* Media query for tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    #survey-form {
+        width: 90%; /* Make form slightly smaller for tablets */
+    }
+
+    h1 {
+        font-size: 2.3rem; /* Adjust title size for tablets */
+    }
+
+    #description {
+        font-size: 1.3rem; /* Adjust description size for tablets */
+    }
+}
+
+/* Media query for larger screens (desktops) */
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 16px; /* Default font size */
+    }
+
+    #survey-form {
+        width: 900px; /* Keep form width fixed for large screens */
+    }
+
+    h1 {
+        font-size: 2.7rem; /* Large title size */
+    }
+
+    #description {
+        font-size: 1.55rem; /* Default description size */
+    }
 }

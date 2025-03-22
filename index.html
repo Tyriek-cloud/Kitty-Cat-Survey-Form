@@ -30,8 +30,7 @@
                 <label id="number-label" for="age">
                     <p>Age (Optional)</p>
                 </label>
-                <input id="number" type="number" placeholder="Write Your Age Here (Optional)" min="10" max="100"
-                    required>
+                <input id="number" type="number" placeholder="Write Your Age Here (Optional)" min="10" max="100" required>
 
                 <p>Do you like cats (you better)?</p>
                 <select id="dropdown">
@@ -103,14 +102,19 @@
                 <input type="checkbox" name="dog-breed" value="10">Chihuahua</input>
                 <br>
 
-                <p id="Comments/Suggestions">Thank you for taking this survey! Any comments or suggestions for how I can
-                    improve the survey?</p>
+                <p id="Comments/Suggestions">Thank you for taking this survey! Any comments or suggestions for how I can improve the survey?</p>
                 <textarea placeholder="Comments/Suggestions" name="suggestion_text" rows="10" cols="60" required></textarea>
 
                 <button id="submit" type="submit">Submit</button>
 
             </form>
 
+            <div id="survey-results"> <!-- Stores the survey results -->
+                <p>Average Age: <span id="average-age"></span></p>
+                <p>Number of People Who Like Cats: <span id="like-cats-count"></span></p>
+                <p>Most Popular Cat Breed: <span id="most-popular-breed"></span></p>
+                <p>Disliked Dog Breeds: <span id="disliked-dogs"></span></p>
+            </div>
         </div>
     </main>
 

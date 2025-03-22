@@ -8,6 +8,9 @@ const ownCatsSelect = document.getElementById("own-cats");
 const favoriteActivitySelect = document.getElementById("favorite-activity");
 const favoriteActivityLabel = document.getElementById("favorite-activity-label");
 
+// Get the status message element
+const statusMessage = document.getElementById("status-message");
+
 // Show favorite activity field if the user owns cats
 ownCatsSelect.addEventListener('change', function() {
     if (ownCatsSelect.value === "Yes. Good answer.") {
@@ -39,6 +42,9 @@ form.addEventListener('submit', function(event) {
     }
 
     if (formValid) {
+        // Clear any previous status message
+        statusMessage.innerHTML = '';
+
         // Create a FormData object to collect form data
         const formData = new FormData(event.target);
 
@@ -49,28 +55,41 @@ form.addEventListener('submit', function(event) {
         })
         .then(response => response.json())
         .then(data => {
-            // After successful submission, fetch the average responses
-            fetch('/average_responses')
-                .then(response => response.json())
-                .then(stats => {
-                    // Display the statistics on the page
-                    document.getElementById('average-age').innerText = stats.average_age || 'N/A';
-                    document.getElementById('like-cats-count').innerText = stats.like_cats_count || 'N/A';
-                    document.getElementById('most-popular-breed').innerText = stats.most_popular_breed || 'N/A';
-                    
-                    // Display disliked dog breeds
-                    let dislikedBreeds = '';
-                    for (let breed in stats.disliked_dogs) {
-                        dislikedBreeds += `${breed}: ${stats.disliked_dogs[breed]}<br>`;
-                    }
-                    document.getElementById('disliked-dogs').innerHTML = dislikedBreeds || 'N/A';
-                })
-                .catch(error => {
-                    console.error('Error fetching average responses:', error);
-                });
+            if (data.status === 'success') {
+                // Display success message
+                statusMessage.innerHTML = 'Survey submitted successfully!';
+                statusMessage.style.color = 'green';
+
+                // After successful submission, fetch the average responses
+                fetch('/average_responses')
+                    .then(response => response.json())
+                    .then(stats => {
+                        // Display the statistics on the page
+                        document.getElementById('average-age').innerText = stats.average_age || 'N/A';
+                        document.getElementById('like-cats-count').innerText = stats.like_cats_count || 'N/A';
+                        document.getElementById('most-popular-breed').innerText = stats.most_popular_breed || 'N/A';
+                        
+                        // Display disliked dog breeds
+                        let dislikedBreeds = '';
+                        for (let breed in stats.disliked_dogs) {
+                            dislikedBreeds += `${breed}: ${stats.disliked_dogs[breed]}<br>`;
+                        }
+                        document.getElementById('disliked-dogs').innerHTML = dislikedBreeds || 'N/A';
+                    })
+                    .catch(error => {
+                        console.error('Error fetching average responses:', error);
+                    });
+            } else {
+                // Display error message
+                statusMessage.innerHTML = 'Error submitting survey. Please try again.';
+                statusMessage.style.color = 'red';
+            }
         })
         .catch(error => {
             console.error('Error submitting form:', error);
+            // Show error message
+            statusMessage.innerHTML = 'Error submitting survey. Please try again.';
+            statusMessage.style.color = 'red';
         });
     }
 });

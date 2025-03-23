@@ -1,4 +1,5 @@
-<img width="383" alt="image" src="https://github.com/user-attachments/assets/e36898e6-3e0f-435e-baec-65580a373f38" /> ![image](https://github.com/user-attachments/assets/73528e63-e468-4c94-98dc-7f3278448925)
+# Kitty-Cat Survey Form
+![image](https://github.com/user-attachments/assets/73528e63-e468-4c94-98dc-7f3278448925)
 
 This is a full-stack web application designed to collect user responses to a survey. The survey was designed to gather sentiments and opinions about domestic cats. The survey currently has the following features:
 
@@ -36,7 +37,6 @@ This application was built using the following free services:
 I used the following SQL script to create the initial table to store user responses in the database:
 
 <img width="179" alt="image" src="https://github.com/user-attachments/assets/91e2f54f-d693-4b1f-8c49-6003bd4b7c07" />
-
 # Notes
 This application is a recreation of an old application that I made several years ago. A link to that application can be found here: https://codepen.io/tyriek-cloud/full/jOMjxzL.
 Additionally, this application is somewhat of a work in progress. There are currently not enough users to display the average user demographics at the bottom of the application. As the number of visitors to the website continues to grow, so too will the numerical displays at the bottom of the website.

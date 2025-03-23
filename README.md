@@ -37,6 +37,7 @@ This application was built using the following free services:
 I used the following SQL script to create the initial table to store user responses in the database:
 
 <img width="179" alt="image" src="https://github.com/user-attachments/assets/91e2f54f-d693-4b1f-8c49-6003bd4b7c07" />
+
 # Notes
 This application is a recreation of an old application that I made several years ago. A link to that application can be found here: https://codepen.io/tyriek-cloud/full/jOMjxzL.
 Additionally, this application is somewhat of a work in progress. There are currently not enough users to display the average user demographics at the bottom of the application. As the number of visitors to the website continues to grow, so too will the numerical displays at the bottom of the website.

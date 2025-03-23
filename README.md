@@ -1,5 +1,5 @@
 # Kitty-Cat Survey Form
-<img width="383" alt="image" src="https://github.com/user-attachments/assets/e36898e6-3e0f-435e-baec-65580a373f38" />
+<img width="383" alt="image" src="https://github.com/user-attachments/assets/e36898e6-3e0f-435e-baec-65580a373f38" /> ![image](https://github.com/user-attachments/assets/73528e63-e468-4c94-98dc-7f3278448925)
 
 This is a full-stack web application designed to collect user responses to a survey. The survey was designed to gather sentiments and opinions about domestic cats. The survey currently has the following features:
 
@@ -31,8 +31,8 @@ There were a series of libraries that were initiated in the "requirements.txt." 
 *Hosting Services*
 This application was built using the following free services:
 
-1. Vercel: For website hosting.
-2. Supabase: For a web version of the database.
+1. Vercel: For website hosting. Here is a link to Vercel: https://vercel.com/
+2. Supabase: For a web version of the database. Here is a link to Supabase: https://supabase.com/
 
 I used the following SQL script to create the initial table to store user responses in the database:
 
